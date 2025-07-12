@@ -1,22 +1,29 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 
-class ProfilePhoto extends StatefulWidget {
-  const ProfilePhoto({super.key, required File imageFile});
+class ProfilePhoto extends StatelessWidget {
+  final File imageFile;
 
-  @override
-  State<ProfilePhoto> createState() => _ProfilePhotoState();
-}
+  const ProfilePhoto({super.key, required this.imageFile});
 
-class _ProfilePhotoState extends State<ProfilePhoto> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(title: const Text("Your Profile Photo")),
       body: Center(
-        child: Text(
-          'Profile Photo Screen',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 80,
+              backgroundImage: FileImage(imageFile),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "Looks good!",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ),
+          ],
         ),
       ),
     );

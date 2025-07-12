@@ -1,5 +1,6 @@
 import 'package:blue/signin_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -238,8 +239,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: InkWell(
                           child: Image.asset(
                             "assets/icons/google.png",
-                            height: 60,
-                            width: 87,
+                            height: 60.h,
+                            width: 87.sp,
                           ),
                         ),
                       ),
@@ -254,8 +255,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: InkWell(
                           child: Image.asset(
                             "assets/icons/apple.png",
-                            height: 60,
-                            width: 87,
+                            height: 60.h,
+                            width: 87.sp,
                           ),
                         ),
                       ),
